@@ -1,0 +1,14 @@
+[Unit]
+Description=server socket for GNSS receiver
+
+#StartLimitIntervalSec=10
+
+[Service]
+Type=forking
+User=pi
+ExecStart=/home/pi/Documents/./server
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

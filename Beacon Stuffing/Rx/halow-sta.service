@@ -1,0 +1,17 @@
+[Unit]
+Description=Newracom Halow STA Service
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=Yes
+#Type=forking
+WorkingDirectory=/home/pi/nrc_pkg/script/
+ExecStart=/usr/bin/python /home/pi/nrc_pkg/script/start.py 0 0 US
+ExecReload=/usr/bin/python /home/pi/nrc_pkg/script/start.py 0 0 US
+ExecStop=/usr/bin/python /home/pi/nrc_pkg/script/stop.py
+User=pi
+Group=pi
+
+[Install]
+WantedBy=multi-user.target
